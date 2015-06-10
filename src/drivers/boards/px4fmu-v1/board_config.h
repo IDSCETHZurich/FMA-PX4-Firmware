@@ -210,6 +210,19 @@ __BEGIN_DECLS
 
 extern void stm32_spiinitialize(void);
 
+
+/************************************************************************************
+ * Name: can_devinit
+ *
+ * Description:
+ *   All STM32 architectures must provide the following interface to work with
+ *   examples/can.
+ *
+ ************************************************************************************/
+
+extern int can_devinit(void);
+
+
 #endif /* __ASSEMBLY__ */
 
 __END_DECLS
