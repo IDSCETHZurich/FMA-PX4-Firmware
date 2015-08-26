@@ -35,8 +35,8 @@
 # STM32 ADC driver with only 2 channels
 #
 
-MODULE_COMMAND	= adc_twoChannels
+MODULE_COMMAND	= adcTwoChannels
 
-SRCS		= adc_2channels.cpp
+SRCS		= adcTwoChannels.cpp
 
 INCLUDE_DIRS	+= $(NUTTX_SRC)/arch/arm/src/stm32 $(NUTTX_SRC)/arch/arm/src/common

@@ -371,7 +371,7 @@ ADC::_sample(unsigned channel)
 /*
  * Driver 'main' command.
  */
-extern "C" __EXPORT int adc_main(int argc, char *argv[]);
+extern "C" __EXPORT int adcTwoChannels_main(int argc, char *argv[]);
 
 namespace
 {
@@ -407,7 +407,7 @@ test(void)
 }
 
 int
-adc_twoChannels_main(int argc, char *argv[])
+adcTwoChannels_main(int argc, char *argv[])
 {
 	if (g_adc == nullptr) {
 #ifdef CONFIG_ARCH_BOARD_PX4FMU_V1
