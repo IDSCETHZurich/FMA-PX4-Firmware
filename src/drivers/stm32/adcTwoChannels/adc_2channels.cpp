@@ -407,7 +407,7 @@ test(void)
 }
 
 int
-adc_2channels_main(int argc, char *argv[])
+adc_twoChannels_main(int argc, char *argv[])
 {
 	if (g_adc == nullptr) {
 #ifdef CONFIG_ARCH_BOARD_PX4FMU_V1
