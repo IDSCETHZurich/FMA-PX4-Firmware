@@ -30,13 +30,13 @@ then
 		echo "[init] Mixer loaded: $MIXER_FILE"
 	else
 		echo "[init] Error loading mixer: $MIXER_FILE"
-		tone_alarm $TUNE_OUT_ERROR
+		# tone_alarm $TUNE_OUT_ERROR
 	fi
 else
 	if [ $MIXER != skip ]
 	then
 		echo "[init] Mixer not defined"
-		tone_alarm $TUNE_OUT_ERROR
+		# tone_alarm $TUNE_OUT_ERROR
 	fi
 fi
 

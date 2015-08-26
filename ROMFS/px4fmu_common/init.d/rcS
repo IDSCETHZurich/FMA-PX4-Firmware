@@ -22,12 +22,12 @@ then
 	set LOG_FILE /fs/microsd/bootlog.txt
 	echo "[init] microSD mounted: /fs/microsd"
 	# Start playing the startup tune
-	tone_alarm start
+	# tone_alarm start
 else
 	set LOG_FILE /dev/null
 	echo "[init] No microSD card found"
 	# Play SOS
-	tone_alarm error
+	# tone_alarm error
 fi
 
 #
@@ -205,7 +205,7 @@ then
 			echo "[init] Trying to update"
 			echo "PX4IO Trying to update" >> $LOG_FILE
 
-			tone_alarm MLL32CP8MB
+			# tone_alarm MLL32CP8MB
 
 			if px4io forceupdate 14662 $IO_FILE
 			then
@@ -214,25 +214,25 @@ then
 				then
 					echo "[init] PX4IO CRC OK, update successful"
 					echo "PX4IO CRC OK after updating" >> $LOG_FILE
-					tone_alarm MLL8CDE
+					# tone_alarm MLL8CDE
 
 					set IO_PRESENT yes
 				else
 					echo "[init] ERROR: PX4IO update failed"
 					echo "PX4IO update failed" >> $LOG_FILE
-					tone_alarm $TUNE_OUT_ERROR
+					# tone_alarm $TUNE_OUT_ERROR
 				fi
 			else
 				echo "[init] ERROR: PX4IO update failed"
 				echo "PX4IO update failed" >> $LOG_FILE
-				tone_alarm $TUNE_OUT_ERROR
+				# tone_alarm $TUNE_OUT_ERROR
 			fi
 		fi
 
 		if [ $IO_PRESENT == no ]
 		then
 			echo "[init] ERROR: PX4IO not found"
-			tone_alarm $TUNE_OUT_ERROR
+			# tone_alarm $TUNE_OUT_ERROR
 		fi
 	fi
 
@@ -301,7 +301,7 @@ then
 				sh /etc/init.d/rc.io
 			else
 				echo "[init] ERROR: PX4IO start failed"
-				tone_alarm $TUNE_OUT_ERROR
+				# tone_alarm $TUNE_OUT_ERROR
 			fi
 		fi
 
@@ -313,7 +313,7 @@ then
 				echo "[init] FMU mode_$FMU_MODE started"
 			else
 				echo "[init] ERROR: FMU mode_$FMU_MODE start failed"
-				tone_alarm $TUNE_OUT_ERROR
+				# tone_alarm $TUNE_OUT_ERROR
 			fi
 
 			if ver hwcmp PX4FMU_V1
@@ -347,7 +347,7 @@ then
 				echo "[init] MKBLCTRL started"
 			else
 				echo "[init] ERROR: MKBLCTRL start failed"
-				tone_alarm $TUNE_OUT_ERROR
+				# tone_alarm $TUNE_OUT_ERROR
 			fi
 
 		fi
@@ -360,7 +360,7 @@ then
 				echo "[init] HIL output started"
 			else
 				echo "[init] ERROR: HIL output start failed"
-				tone_alarm $TUNE_OUT_ERROR
+				# tone_alarm $TUNE_OUT_ERROR
 			fi
 		fi
 
@@ -377,7 +377,7 @@ then
 					sh /etc/init.d/rc.io
 				else
 					echo "[init] ERROR: PX4IO start failed"
-					tone_alarm $TUNE_OUT_ERROR
+					# tone_alarm $TUNE_OUT_ERROR
 				fi
 			fi
 		else
@@ -388,7 +388,7 @@ then
 					echo "[init] FMU mode_$FMU_MODE started"
 				else
 					echo "[init] ERROR: FMU mode_$FMU_MODE start failed"
-					tone_alarm $TUNE_OUT_ERROR
+					# tone_alarm $TUNE_OUT_ERROR
 				fi
 
 				if ver hwcmp PX4FMU_V1
